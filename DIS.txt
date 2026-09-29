@@ -1,0 +1,274 @@
+# Python Time & Space Complexity Analyzer
+
+A simple Python command-line tool that analyzes Python code and estimates its **Time Complexity** and **Space Complexity** using Big-O notation.
+
+## 📌 About the Project
+
+The **Python Time & Space Complexity Analyzer** is an educational project designed to help students understand the complexity of Python programs.
+
+The program allows the user to enter Python code directly into the terminal. After the code is entered, the analyzer checks the program for different patterns such as:
+
+* `for` loops
+* `while` loops
+* Nested loops
+* Recursion
+* Lists created based on `n`
+* List `.append()` operations
+* String reversal
+* Logarithmic loops
+
+It then displays the detected characteristics and provides an estimated Time Complexity and Space Complexity.
+
+## 🎯 Objectives
+
+* Understand the basic concept of Big-O notation.
+* Identify common patterns that affect algorithm complexity.
+* Practice analyzing Python programs.
+* Provide a simple command-line tool for learning DSA concepts.
+* Make complexity analysis easier for beginners.
+
+## ⚙️ Features
+
+### 1. Loop Detection
+
+The program counts the number of:
+
+* `for` loops
+* `while` loops
+
+It also checks whether loops are nested.
+
+### 2. Nested Loop Detection
+
+The program uses indentation to identify whether one loop exists inside another loop.
+
+Depending on the detected nesting depth, it can estimate complexities such as:
+
+* `O(n²)`
+* `O(n³)`
+* `O(n^k)`
+
+It also checks for cases involving both `n` and `m`, where it can identify `O(nm)`.
+
+### 3. Recursion Detection
+
+The program identifies function definitions and checks whether a function name appears multiple times in the program to estimate whether recursion is present.
+
+When recursion is detected, the program estimates:
+
+**Time Complexity:** `O(n)`
+
+**Space Complexity:** `O(n)`
+
+### 4. Logarithmic Loop Detection
+
+The analyzer checks for operations such as:
+
+```python
+// 2
+```
+
+and:
+
+```python
+/= 2
+```
+
+These patterns are treated as logarithmic operations.
+
+The estimated complexity is:
+
+```text
+O(log n)
+```
+
+### 5. Space Complexity Detection
+
+The program checks for operations that generally require additional memory, including:
+
+* Recursion
+* String reversal using `[::-1]`
+* Lists created using `n`
+* List `.append()` operations
+
+These are estimated as:
+
+```text
+O(n)
+```
+
+Otherwise, the program estimates:
+
+```text
+O(1)
+```
+
+## 🛠️ Technologies Used
+
+* **Python**
+* Python standard functionality
+* Command Line / Terminal
+* Big-O notation
+* Basic code analysis techniques
+
+No external Python libraries are required.
+
+## 🚀 How to Run
+
+### Step 1: Install Python
+
+Make sure Python is installed on your computer.
+
+Check your Python installation using:
+
+```bash
+python --version
+```
+
+### Step 2: Open the Project Folder
+
+Open Command Prompt or PowerShell and navigate to the folder containing the Python file.
+
+Example:
+
+```bash
+cd path\to\your\project
+```
+
+### Step 3: Run the Program
+
+Run:
+
+```bash
+python vdd.py
+```
+
+## 💻 How to Use
+
+After starting the program, it will display:
+
+```text
+======================================
+ TIME & SPACE COMPLEXITY TOOL
+======================================
+
+Enter your Python code.
+Type END when you are finished.
+```
+
+Enter the Python code you want to analyze.
+
+For example:
+
+```python
+n = 10
+
+for i in range(n):
+    print(i)
+```
+
+When you finish entering the code, type:
+
+```text
+END
+```
+
+The program will analyze the code and display the result.
+
+## 📊 Example Output
+
+```text
+======================================
+ RESULT
+======================================
+
+Number of for loops : 1
+Number of while loops : 0
+Nested loops : No
+Recursion detected : No
+
+Time Complexity : O(n)
+Space Complexity : O(1)
+
+======================================
+```
+
+## 🧠 Complexity Patterns
+
+The analyzer currently uses several patterns to estimate complexity.
+
+| Detected Pattern         | Estimated Time   | Estimated Space |
+| ------------------------ | ---------------- | --------------- |
+| No major loop/operation  | `O(1)`           | `O(1)`          |
+| Single loop              | `O(n)`           | `O(1)`          |
+| Nested loops             | `O(n²)` / higher | `O(1)`          |
+| `n` and `m` nested loops | `O(nm)`          | `O(1)`          |
+| Logarithmic loop         | `O(log n)`       | `O(1)`          |
+| String reversal          | `O(n)`           | `O(n)`          |
+| List based on `n`        | `O(n)`           | `O(n)`          |
+| List append              | `O(n)`           | `O(n)`          |
+| Recursion                | `O(n)`           | `O(n)`          |
+
+## 📁 Project Structure
+
+```text
+Python-Time-Space-Complexity-Analyzer/
+│
+├── vdd.py
+└── README.md
+```
+
+### `vdd.py`
+
+Contains the complete Python program responsible for:
+
+* Taking Python code as input
+* Detecting loops
+* Detecting nested loops
+* Detecting recursion
+* Detecting list operations
+* Detecting string reversal
+* Estimating time complexity
+* Estimating space complexity
+* Displaying the final result
+
+### `README.md`
+
+Contains the project documentation, installation instructions, usage instructions, features, and complexity information.
+
+## ⚠️ Limitations
+
+This project provides an **approximation** of complexity rather than performing a complete formal analysis of Python code.
+
+For example, recursion is detected using the occurrence of function names, and complexity is determined using specific code patterns. Therefore, complicated algorithms may not always receive the exact theoretical Big-O complexity.
+
+The tool is primarily intended for **learning and educational purposes**.
+
+## 🔮 Future Improvements
+
+Possible improvements include:
+
+* More accurate Abstract Syntax Tree (AST) based code analysis
+* Better recursion analysis
+* Detection of multiple independent loops
+* Detection of common sorting and searching algorithms
+* More accurate space-complexity analysis
+* Support for additional logarithmic patterns
+* Graphical user interface
+* Syntax highlighting
+* Detailed explanation of why a particular complexity was detected
+
+## 👨‍💻 Purpose
+
+This project was created as a learning project to practice:
+
+* Python programming
+* Loops and conditions
+* String processing
+* Basic code analysis
+* Big-O notation
+* Data Structures and Algorithms concepts
+
+## 📄 License
+
+This project is intended for educational use.
