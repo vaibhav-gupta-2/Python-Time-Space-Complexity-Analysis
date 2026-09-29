@@ -1,0 +1,3 @@
+Python Time & Space Complexity Analyzer is a command-line Python program designed to help students understand the approximate time and space complexity of Python code. The user enters a Python program, and the tool analyzes its structure to detect features such as for loops, while loops, nested loops, recursion, list creation, list appending, string reversal, and logarithmic loops. It then displays the detected patterns along with an estimated Big-O time and space complexity.
+
+The project is intended as a simple educational tool for learning Data Structures and Algorithms (DSA) concepts, particularly Big-O notation.
